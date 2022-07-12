@@ -55,4 +55,26 @@ int main()
         }
 
     }
+    for (int i = 0; i < count + 2; i++)
+    {
+        for (int j = 0; j < max_weight + 2; j++)
+        {
+            std::cout << list[i][j] << '\t';
+        }
+        std::cout << std::endl;
+    }
+    int i{ count + 1 };
+    int j{ max_weight + 1 };
+    std::cout << "Combination: ";
+    while (i - 1 > 0 and j > 0)
+    {
+        if (list[i - 1][j] == list[i][j])
+        {
+            i--;
+            continue;
+        }
+        std::cout << i - 1 << " ";
+        j -= weight_list[i];
+        i--;
+    }
 }
